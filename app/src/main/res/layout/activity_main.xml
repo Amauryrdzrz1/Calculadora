@@ -26,15 +26,37 @@
                 android:layout_gravity="end"
                 android:autoSizeTextType="uniform"
                 android:background="@color/texto"
-                android:text="@string/calcu"
+                android:text=""
                 android:textAlignment="textEnd"
                 android:textColor="@color/teclas"
-                android:textSize="150dp"
-                android:onClick="miclick"
+                android:textSize="60dp"
                 android:id="@+id/lbl1"
                 >
 
             </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:autoSizeTextType="uniform"
+                android:background="@color/texto"
+                android:text="@string/calcu"
+                android:textAlignment="textEnd"
+                android:textColor="@color/teclas"
+                android:textSize="60dp"
+                android:id="@+id/lbl2"
+                >
+
+            </TextView>
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,7 +72,7 @@
                 android:background="@color/teclaos"
                 android:text="AC"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/borrar"
                 android:textSize="60dp">
 
             </Button>
@@ -62,7 +84,7 @@
                 android:background="@color/teclaos"
                 android:text="+/-"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/masmen"
                 android:textSize="60dp">
 
             </Button>
@@ -74,7 +96,7 @@
                 android:background="@color/teclaos"
                 android:text="%"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/porcent"
                 android:textSize="60dp">
 
             </Button>
@@ -86,7 +108,7 @@
                 android:background="@color/teclasde"
                 android:text="÷"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/div"
                 android:textSize="60dp">
 
             </Button>
@@ -100,6 +122,7 @@
             android:weightSum="8">
 
             <Button
+                android:id="@+id/btn8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
@@ -115,7 +138,7 @@
                 android:layout_weight="2"
                 android:text="7"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/btn7"
                 android:textSize="60dp">
 
             </Button>
@@ -126,7 +149,7 @@
                 android:layout_weight="2"
                 android:text="9"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/btn9"
                 android:textSize="60dp">
 
             </Button>
@@ -138,7 +161,7 @@
                 android:background="@color/teclasde"
                 android:text="*"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/por"
                 android:textSize="60dp">
 
             </Button>
@@ -156,7 +179,7 @@
                 android:layout_weight="2"
                 android:text="4"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/btn4"
                 android:textSize="60dp">
 
             </Button>
@@ -167,7 +190,7 @@
                 android:layout_weight="2"
                 android:text="5"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/btn5"
                 android:textSize="60dp">
 
             </Button>
@@ -178,7 +201,7 @@
                 android:layout_weight="2"
                 android:text="6"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/btn6"
                 android:textSize="60dp">
 
             </Button>
@@ -190,7 +213,7 @@
                 android:background="@color/teclasde"
                 android:text="-"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/menos"
                 android:textSize="60dp">
 
             </Button>
@@ -208,7 +231,7 @@
                 android:layout_weight="2"
                 android:text="1"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/btn1"
                 android:textSize="60dp">
 
             </Button>
@@ -219,7 +242,7 @@
                 android:layout_weight="2"
                 android:text="2"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/btn2"
                 android:textSize="60dp">
 
             </Button>
@@ -230,7 +253,7 @@
                 android:layout_weight="2"
                 android:text="3"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/btn3"
                 android:textSize="60dp">
 
             </Button>
@@ -242,7 +265,7 @@
                 android:background="@color/teclasde"
                 android:text="+"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/mas"
                 android:textSize="60dp">
 
             </Button>
@@ -262,7 +285,7 @@
                 android:textAlignment="center"
                 android:textSize="60dp"
                 android:autoSizeTextType="uniform"
-
+                android:id="@+id/btn0"
                 >
 
             </Button>
@@ -273,8 +296,7 @@
                 android:layout_weight="2"
                 android:text="."
                 android:textSize="60dp"
-                android:onClick="miclick"
-                android:id="@+id/btn1"
+                android:id="@+id/dec"
                 android:autoSizeTextType="uniform"
                 >
 
@@ -287,8 +309,7 @@
                 android:background="@color/teclasde"
                 android:text="="
                 android:textSize="60dp"
-                android:onClick="miclick"
-                android:id="@+id/btn2"
+                android:id="@+id/igual"
                 android:autoSizeTextType="uniform"
                 >
 
