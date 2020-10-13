@@ -39,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
     private final char MULTIPLICATION = '*';
     private final char DIVISION = '/';
     private final char EQUAL = 0;
+    private final char DELETE = 0;
     private double val1 = Double.NaN;
-    private double val2;
+    private double val2 = Double.NaN;
     private char Action;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
                 Action = EQUAL;
                 resu.setText(resu.getText().toString()+ String.valueOf(val2)+ '=' +String.valueOf(val1));
                 datos.setText(null);
+                val1 = 0;
             }
         });
         del.setOnClickListener(new View.OnClickListener() {
@@ -159,7 +161,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 resu.setText(null);
                 datos.setText(null);
-
+            }
+        });
+        mm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                val1 = val2*-1;
             }
         });
     }
@@ -207,6 +214,8 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case EQUAL:
                     break;
+
+
             }
         }
         else{
