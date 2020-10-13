@@ -32,12 +32,135 @@ public class MainActivity extends AppCompatActivity {
     private Button pc;
     private Button deci;
     private Button mm;
-
+    private TextView datos;
+    private TextView resu;
+    private final char ADDITION = '+';
+    private final char SUBSTRACTION = '-';
+    private final char MULTIPLICATION = '*';
+    private final char DIVISION = '/';
+    private final char EQUAL = 0;
+    private double val1 = Double.NaN;
+    private double val2;
+    private char Action;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setupUi();
+
+        cero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + "0");
+            }
+        });
+        uno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + "1");
+            }
+        });
+        dos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + "2");
+            }
+        });
+        tres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + "3");
+            }
+        });
+        cuatro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + "4");
+            }
+        });
+        cinco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + "5");
+            }
+        });
+        seis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + "6");
+            }
+        });
+        siete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + "7");
+            }
+        });
+        ocho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + "8");
+            }
+        });
+        nuevo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + "9");
+            }
+        });
+        suma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            calcular();
+            Action = ADDITION;
+            resu.setText(String.valueOf(val1)+'+');
+            datos.setText(null);
+            }
+        });
+        resta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcular();
+                Action = SUBSTRACTION;
+                resu.setText(String.valueOf(val1)+'-');
+                datos.setText(null);
+            }
+        });
+        multi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcular();
+                Action = MULTIPLICATION;
+                resu.setText(String.valueOf(val1)+'*');
+                datos.setText(null);
+            }
+        });
+        divi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcular();
+                Action = DIVISION;
+                resu.setText(String.valueOf(val1)+'/');
+                datos.setText(null);
+            }
+        });
+        equ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcular();
+                Action = EQUAL;
+                resu.setText(resu.getText().toString()+ String.valueOf(val2)+ '=' +String.valueOf(val1));
+                datos.setText(null);
+            }
+        });
+        del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resu.setText(null);
+                datos.setText(null);
+            }
+        });
     }
 
 
@@ -61,5 +184,32 @@ public class MainActivity extends AppCompatActivity {
         equ = (Button)findViewById(R.id.igual);
         multi = (Button)findViewById(R.id.por);
         mm = (Button)findViewById(R.id.masmen);
+        datos = (TextView)findViewById(R.id.lbl2);
+        resu = (TextView)findViewById(R.id.lbl1);
+
+    }
+    private void calcular(){
+        if (!Double.isNaN(val1)){
+            val2 = Double.parseDouble(datos.getText().toString());
+            switch(Action){
+                case ADDITION:
+                    val1 = val1+val2;
+                    break;
+                case SUBSTRACTION:
+                    val1 = val1-val2;
+                    break;
+                case MULTIPLICATION:
+                    val1 = val1*val2;
+                    break;
+                case DIVISION:
+                    val1 = val1/val2;
+                    break;
+                case EQUAL:
+                    break;
+            }
+        }
+        else{
+            val1 = Double.parseDouble(datos.getText().toString());
+        }
     }
 }

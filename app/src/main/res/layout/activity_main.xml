@@ -48,7 +48,7 @@
                 android:layout_gravity="end"
                 android:autoSizeTextType="uniform"
                 android:background="@color/texto"
-                android:text="@string/calcu"
+                android:text=""
                 android:textAlignment="textEnd"
                 android:textColor="@color/teclas"
                 android:textSize="60dp"
