@@ -38,10 +38,11 @@ public class MainActivity extends AppCompatActivity {
     private final char SUBSTRACTION = '-';
     private final char MULTIPLICATION = '*';
     private final char DIVISION = '/';
+    private final char PERCENT= '%';
+    private final char DECI = '.';
     private final char EQUAL = 0;
-    private final char DELETE = 0;
     private double val1 = Double.NaN;
-    private double val2 = Double.NaN;
+    private double val2;
     private char Action;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +111,12 @@ public class MainActivity extends AppCompatActivity {
                 datos.setText(datos.getText().toString() + "9");
             }
         });
+        deci.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + ".");
+            }
+        });
         suma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,6 +153,15 @@ public class MainActivity extends AppCompatActivity {
                 datos.setText(null);
             }
         });
+        pc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcular();
+                Action = PERCENT;
+                resu.setText(String.valueOf(val1)+'%');
+                datos.setText(null);
+            }
+        });
         equ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -161,12 +177,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 resu.setText(null);
                 datos.setText(null);
-            }
-        });
-        mm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                val1 = val2*-1;
+                val1 = Double.NaN;
+                val2 = Double.NaN;
             }
         });
     }
@@ -186,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
         suma = (Button)findViewById(R.id.mas);
         resta = (Button)findViewById(R.id.menos);
         divi = (Button)findViewById(R.id.div);
-        pc = (Button)findViewById(R.id.percent);
+        pc = (Button)findViewById(R.id.porcent);
         deci = (Button)findViewById(R.id.dec);
         del = (Button)findViewById(R.id.borrar);
         equ = (Button)findViewById(R.id.igual);
@@ -212,10 +224,10 @@ public class MainActivity extends AppCompatActivity {
                 case DIVISION:
                     val1 = val1/val2;
                     break;
+                case PERCENT:
+                    val1 = (val2*100)/val1;
                 case EQUAL:
                     break;
-
-
             }
         }
         else{
