@@ -111,6 +111,12 @@ public class MainActivity extends AppCompatActivity {
                 datos.setText(datos.getText().toString() + "9");
             }
         });
+        mm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datos.setText(datos.getText().toString() + '-');
+            }
+        });
         deci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
